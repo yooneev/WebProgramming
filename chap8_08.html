@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 확대</title>
+    <script>
+        let clickCount = 1;
+        function changeScale() {
+            var img = document.getElementById("SpongeBobSquarePants");
+            clickCount++;
+            img.style.transform = `scale(${clickCount},1)`;
+        }
+    </script>
+</head>
+<body>
+    <h3>클릭하면 2, 3, 4배로 옆으로 늘어납니다.</h3>
+    <hr>
+    <img id="SpongeBobSquarePants" onclick=changeScale() src="SpongeBobSquarePants.png">
+</body>
+</html>
