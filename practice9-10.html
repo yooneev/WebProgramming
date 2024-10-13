@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>계산기 만들기</title>
+    <style>
+        #display {
+            width: 375px;
+            height: 40px;
+            font-size: 18px;
+            text-align: right;
+        }
+        .calculator {
+            text-align: center;
+            width: 375px;
+            margin: 0 auto;
+        }
+        .row {
+            margin-bottom: 10px;
+        }
+        .button {
+            width: 70px;
+            height: 50px;
+            margin-right: 10px;
+            font-size: 18px;
+            display: inline-block;
+        }
+        .button:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>계산기 만들기</h1>
+    <hr>
+    <div class="calculator">
+        <input id="display" type="text" value="0">
+        <br><br>
+        <div class="row">
+            <input class="button" type="button" value="Back" onclick="back()">
+            <input class="button" type="button" value="CE" onclick="del()">
+            <input class="button" type="button" value="C" onclick="del()">
+            <input class="button" type="button" value="=" onclick="enter()">
+        </div>
+        <div class="row">
+            <input class="button" type="button" value="7" onclick="inp('7')">
+            <input class="button" type="button" value="8" onclick="inp('8')">
+            <input class="button" type="button" value="9" onclick="inp('9')">
+            <input class="button" type="button" value="/" onclick="inp('/')">
+        </div>
+        <div class="row">
+            <input class="button" type="button" value="4" onclick="inp('4')">
+            <input class="button" type="button" value="5" onclick="inp('5')">
+            <input class="button" type="button" value="6" onclick="inp('6')">
+            <input class="button" type="button" value="*" onclick="inp('*')">
+        </div>
+        <div class="row">
+            <input class="button" type="button" value="1" onclick="inp('1')">
+            <input class="button" type="button" value="2" onclick="inp('2')">
+            <input class="button" type="button" value="3" onclick="inp('3')">
+            <input class="button" type="button" value="-" onclick="inp('-')">
+        </div>
+        <div class="row">
+            <input class="button" type="button" value="0" onclick="inp('0')">
+            <input class="button" type="button" value="+" onclick="inp('+')">
+            <input class="button" type="button" value="NONE">
+            <input class="button" type="button" value="NONE">
+        </div>
+    </div>
+    <script>
+        var exp = "";
+    
+        function inp(text) {
+            exp += text;
+            document.getElementById("display").value = exp;
+        }
+    
+        function enter() {
+            document.getElementById("display").value = eval(exp);
+        }
+    
+        function del() {
+            document.getElementById("display").value = "0";
+            exp = "";
+        }
+    
+        function back() {
+            let length = document.getElementById("display").value.length;
+            document.getElementById("display").value = document.getElementById("display").value.substring(0, length - 1);
+            exp = document.getElementById("display").value.toString();
+        }
+    </script>
+</body>
+</html>
