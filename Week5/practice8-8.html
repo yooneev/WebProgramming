@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 확대</title>
+        <script>
+            let scale = 1;
+            function zoomImage(img) {
+                scale += 1;
+                if (scale > 4) {
+                    scale = 1;
+                }
+                img.style.transform = `scaleX(${scale})`;
+            }
+        </script>
+</head>
+<body>
+    <h3>클릭하면 2,3,4배로 옆으로 늘어납니다.</h3>
+    <img src="SpongeBobSquarePants.png" alt="클릭하여 확대" onclick="zoomImage(this)";>
+</body>
+</html>
