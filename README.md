@@ -17,7 +17,7 @@
 
 ## 5주차
     - DOM
-    - practice8-9.html, practice8-10(1).html, practice8-10(2).html
+    - practice8-8.html, practice8-9.html, practice8-10(1).html, practice8-10(2).html
 
 ## 6주차
     - 이벤트, 이벤트 핸들링
